@@ -7,11 +7,11 @@
       <ion-card-content>
         <ion-item>
           <ion-label position="floating">Login</ion-label>
-          <ion-input placeholder="Enter Login" fill="outline"></ion-input>
+          <ion-input placeholder="Enter Login" fill="outline" formControlName="login"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input placeholder="Enter Password" fill="outline" type="password"></ion-input>
+          <ion-input placeholder="Enter Password" fill="outline" type="password" formControlName="password"></ion-input>
         </ion-item>
         <ion-button color="dark" fill="clear" (click)="navigateToSignupPage()">No accounts? Sign up</ion-button>
         <ion-button color="success" (click)="navigateToHomePage()">Login</ion-button>
