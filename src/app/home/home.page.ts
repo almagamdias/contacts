@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { AlertController } from '@ionic/angular';
+import { Contacts, ContactsPlugin, ContactPayload, PhoneType } from '@capacitor-community/contacts';
+
 
 @Component({
   selector: 'app-home',
@@ -12,12 +14,32 @@ export class HomePage {
 
   isSupported = false;
   barcodes: Barcode[] = [];
+  contacts: any[] = [];
+  permissions: any;
   constructor(private alertController: AlertController) { }
-
+  
   ngOnInit() {
+    this.load();
     BarcodeScanner.isSupported().then((result) => {
       this.isSupported = result.supported;
     });
+  }
+
+  async load() {
+    const permission = await Contacts.requestPermissions();
+    console.log('Permission: ', permission.contacts);
+    if (!permission?.contacts) return;
+    else if (permission?.contacts == 'granted') {
+      const result = await Contacts.getContacts({
+        projection: {
+          name: true,
+          phones: true
+        }
+      });
+      console.log('Res: ', result);
+      this.contacts = result.contacts;
+      console.log(this.contacts);
+    }
   }
 
   async scan(): Promise<void> {

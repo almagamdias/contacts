@@ -42,10 +42,10 @@
     </application>
 
     <!-- Permissions -->
-    <!-- To get access to the camera. -->
     <uses-permission android:name="android.permission.CAMERA"
       tools:ignore="ManifestOrder" />
-    <!-- To get access to the flashlight. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
