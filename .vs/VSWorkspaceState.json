@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\android",
+    "\\android\\app",
+    "\\android\\app\\src",
+    "\\android\\app\\src\\androidTest\\java",
+    "\\android\\app\\src\\androidTest\\java\\com",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\home",
-    "\\src\\app\\index",
     "\\src\\app\\pages",
-    "\\src\\app\\pages\\login",
-    "\\src\\app\\pages\\signup",
     "\\src\\app\\pages\\welcome"
   ],
-  "SelectedNode": "\\tsconfig.json",
+  "SelectedNode": "\\android\\app\\src\\main",
   "PreviewInSolutionExplorer": false
 }
