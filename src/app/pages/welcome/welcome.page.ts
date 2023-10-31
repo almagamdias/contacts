@@ -26,7 +26,14 @@ export class WelcomePage implements OnInit {
       return;
     }
     const { barcodes } = await BarcodeScanner.scan();
+    this.barcodes.pop();
     this.barcodes.push(...barcodes);
+    const alert = await this.alertController.create({
+      header: barcodes[0].format,
+      message: barcodes[0].rawValue.toString(),
+      buttons: ['OK'],
+    });
+    await alert.present();
   }
 
   async requestPermissions(): Promise<boolean> {
