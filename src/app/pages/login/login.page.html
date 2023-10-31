@@ -1,21 +1,25 @@
 <ion-content [fullscreen]="true">
   <div class="flex-center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Login</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Login</ion-label>
-          <ion-input placeholder="Enter Login" fill="outline" formControlName="login"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input placeholder="Enter Password" fill="outline" type="password" formControlName="password"></ion-input>
-        </ion-item>
-        <ion-button color="dark" fill="clear" (click)="navigateToSignupPage()">No accounts? Sign up</ion-button>
-        <ion-button color="success" (click)="navigateToHomePage()">Login</ion-button>
-      </ion-card-content>
-    </ion-card>
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Login</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input placeholder="Enter Email" fill="outline" typeof="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-label color="danger">{{message}}</ion-label>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input placeholder="Enter Password" fill="outline" type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-label color="danger">{{message2}}</ion-label>
+          <ion-button color="dark" fill="clear" (click)="navigateToSignupPage()">No accounts? Sign up</ion-button>
+          <ion-button color="success" [disabled]="!form.valid" (click)="navigateToHomePage()">Login</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>

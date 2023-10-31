@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from '@angular/router';
+import { LoginPageForm } from './login.page.form';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,28 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router) { }
+  public message: string = "";
+  public message2: string = "";
+  form!: FormGroup;
+  login: String = 'RTX@g.com';
+  password: String = 'RTX3060';
+  constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.form = new LoginPageForm(this.formBuilder).createForm();
   }
   navigateToHomePage() {
-    this.router.navigate(['home']);
+    if (this.form.get('email')?.value == this.login) {
+      this.message = "";
+      if (this.form.get('password')?.value == this.password)
+        this.router.navigate(['home']);
+      else
+        this.message2 = "Incorrect password";
+    }
+    else {
+      this.message = "";
+      this.message = "No email exist";
+    }
   }
   navigateToSignupPage() {
     this.router.navigate(['signup']);

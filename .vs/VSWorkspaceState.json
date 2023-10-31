@@ -7,8 +7,9 @@
     "\\src\\app\\index",
     "\\src\\app\\pages",
     "\\src\\app\\pages\\login",
-    "\\src\\app\\pages\\signup"
+    "\\src\\app\\pages\\signup",
+    "\\src\\app\\pages\\welcome"
   ],
-  "SelectedNode": "\\src\\app\\home\\home.page.html",
+  "SelectedNode": "\\tsconfig.json",
   "PreviewInSolutionExplorer": false
 }

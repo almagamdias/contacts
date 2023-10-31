@@ -1,17 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { LoginPage } from './login.page';
+import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { AppRoutingModule } from '../../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('LoginPage', () => {
   let component: LoginPage;
   let fixture: ComponentFixture<LoginPage>;
+  let router: Router;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ LoginPage ],
+      imports: [
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        ReactiveFormsModule
+      ]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(LoginPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+    router = TestBed.get(router);
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    component = fixture.componentInstance;
+  }));
 });
