@@ -4,13 +4,13 @@
     "\\android",
     "\\android\\app",
     "\\android\\app\\src",
-    "\\android\\app\\src\\androidTest\\java",
-    "\\android\\app\\src\\androidTest\\java\\com",
+    "\\android\\app\\src\\main",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home",
     "\\src\\app\\pages",
     "\\src\\app\\pages\\welcome"
   ],
-  "SelectedNode": "\\android\\app\\src\\main",
+  "SelectedNode": "\\src\\app\\home\\home.page.ts",
   "PreviewInSolutionExplorer": false
 }
