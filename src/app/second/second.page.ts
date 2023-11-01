@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-second',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondPage implements OnInit {
 
-  constructor() { }
+  data: any;
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
   }

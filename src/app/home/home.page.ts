@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { Barcode, BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Contacts, ContactsPlugin, ContactPayload, PhoneType } from '@capacitor-community/contacts';
 
 
@@ -16,7 +16,7 @@ export class HomePage {
   barcodes: Barcode[] = [];
   contacts: any[] = [];
   permissions: any;
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController, private nav: NavController) { }
   
   ngOnInit() {
     this.load();
@@ -44,6 +44,9 @@ export class HomePage {
   }
   showDetail() {
     this.router.navigate(['second']);
+  }
+  showDetail2() {
+    this.nav.navigateForward(['second']);
   }
   async scan(): Promise<void> {
     const granted = await this.requestPermissions();

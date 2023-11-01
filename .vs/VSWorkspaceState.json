@@ -9,8 +9,9 @@
     "\\src\\app",
     "\\src\\app\\home",
     "\\src\\app\\pages",
-    "\\src\\app\\pages\\welcome"
+    "\\src\\app\\pages\\login",
+    "\\src\\app\\second"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

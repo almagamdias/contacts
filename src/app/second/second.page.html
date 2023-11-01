@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Full information</ion-title>
+    <div class="flex-between">
+      <ion-buttons>
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>Full information</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +15,7 @@
       <ion-title size="large">Full information</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-label>
+    {{ data }}
+  </ion-label>
 </ion-content>
