@@ -27,7 +27,6 @@ export class HomePage {
 
   async load() {
     const permission = await Contacts.requestPermissions();
-    console.log('Permission: ', permission.contacts);
     if (!permission?.contacts) return;
     else if (permission?.contacts == 'granted') {
       const result = await Contacts.getContacts({
@@ -37,9 +36,7 @@ export class HomePage {
           emails: true
         }
       });
-      console.log('Res: ', result);
       this.contacts = result.contacts;
-      console.log(this.contacts);
     }
   }
   join(array: any) {

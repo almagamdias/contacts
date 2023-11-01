@@ -11,14 +11,19 @@
             <ion-input placeholder="Enter Email" fill="outline" typeof="email" formControlName="email"></ion-input>
           </ion-item>
           <ion-label color="danger">{{message}}</ion-label>
+          <ion-label color="danger" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">EMAIL required!</ion-label>
           <ion-item>
             <ion-label position="floating">Password</ion-label>
             <ion-input placeholder="Enter Password" fill="outline" type="password" formControlName="password"></ion-input>
           </ion-item>
-          <ion-label color="danger">{{message2}}</ion-label>
+          <div class="flex-column">
+            <ion-label color="danger">{{message2}}</ion-label>
+            <ion-label color="danger" *ngIf="form.get('password')?.hasError('pattern')">Min 1 Upper- & Lowercase & digit</ion-label>
+          </div>
           <div class="flex-between">
-            <ion-label color="danger" *ngIf="!form.valid">Min 6 characters</ion-label>
             <ion-button color="success" [disabled]="!form.valid" (click)="navigateToHomePage()">Login</ion-button>
+            <ion-label color="danger" *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched">Min 6 characters</ion-label>
+            <ion-label color="danger" *ngIf="form.get('password')?.hasError('maxlength') && form.get('password')?.touched">MAX 30 characters</ion-label>
           </div>
         </ion-card-content>
       </ion-card>

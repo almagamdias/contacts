@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
   public message3: string = "";
   form!: FormGroup;
   login: String = 'RTX@g.com';
-  password: String = 'RTX3060';
+  password: String = 'RTX3060ti';
   constructor(private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {

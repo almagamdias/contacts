@@ -10,7 +10,7 @@ export class LoginPageForm {
   createForm(): FormGroup {
     return this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9 ]*'), Validators.minLength(6), Validators.maxLength(30)]]
+      password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9 ]*'), Validators.minLength(6), Validators.maxLength(30)]]
     });
   }
 
