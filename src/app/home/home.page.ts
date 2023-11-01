@@ -42,11 +42,10 @@ export class HomePage {
   join(array: any) {
     return array.map((x: { number: any; }) => x.number).join(' | ');
   }
-  showDetail() {
-    this.router.navigate(['second']);
-  }
-  showDetail2() {
-    this.nav.navigateForward(['second']);
+  showDetail(item: any) {
+    this.nav.navigateForward(['second', {
+      data: JSON.stringify(item)
+    }]);
   }
   async scan(): Promise<void> {
     const granted = await this.requestPermissions();

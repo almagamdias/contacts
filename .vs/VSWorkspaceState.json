@@ -12,6 +12,6 @@
     "\\src\\app\\pages\\login",
     "\\src\\app\\second"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }
