@@ -16,7 +16,6 @@
             <ion-input placeholder="Enter Password" fill="outline" type="password" formControlName="password"></ion-input>
           </ion-item>
           <ion-label color="danger">{{message2}}</ion-label>
-          <ion-button color="dark" fill="clear" (click)="navigateToSignupPage()">No accounts? Sign up</ion-button>
           <ion-button color="success" [disabled]="!form.valid" (click)="navigateToHomePage()">Login</ion-button>
         </ion-card-content>
       </ion-card>

@@ -33,7 +33,4 @@ export class LoginPage implements OnInit {
       this.message = "No email exist";
     }
   }
-  navigateToSignupPage() {
-    this.router.navigate(['signup']);
-  }
 }
