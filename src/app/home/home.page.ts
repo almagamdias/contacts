@@ -16,7 +16,7 @@ export class HomePage {
   barcodes: Barcode[] = [];
   contacts: any[] = [];
   permissions: any;
-  constructor(private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController) { }
   
   ngOnInit() {
     this.load();
@@ -41,6 +41,9 @@ export class HomePage {
   }
   join(array: any) {
     return array.map((x: { number: any; }) => x.number).join(' | ');
+  }
+  showDetail() {
+    this.router.navigate(['second']);
   }
   async scan(): Promise<void> {
     const granted = await this.requestPermissions();
