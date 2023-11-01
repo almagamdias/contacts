@@ -33,7 +33,8 @@ export class HomePage {
       const result = await Contacts.getContacts({
         projection: {
           name: true,
-          phones: true
+          phones: true,
+          emails: true
         }
       });
       console.log('Res: ', result);
@@ -41,7 +42,9 @@ export class HomePage {
       console.log(this.contacts);
     }
   }
-
+  join(array: any) {
+    return array.map((x: { number: any; }) => x.number).join(' | ');
+  }
   async scan(): Promise<void> {
     const granted = await this.requestPermissions();
     if (!granted) {

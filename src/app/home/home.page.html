@@ -7,11 +7,12 @@
       <ion-button fill="clear" (click)="scan()" [disabled]="!isSupported"><ion-icon name="scan"></ion-icon></ion-button>
     </div>
   </ion-header>
-  <div id="container">
-    <ion-list [inset]="true">
+  <div id="container" style="height: 350px" scrollY="true">
+    <ion-list>
       <ion-item *ngFor="let c of contacts">
         <ion-label>
           {{c?.name?.display}}
+          <p>{{join(c?.phones)}}</p>
         </ion-label>
       </ion-item>
     </ion-list>

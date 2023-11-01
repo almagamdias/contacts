@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
 
   public message: string = "";
   public message2: string = "";
+  public message3: string = "";
   form!: FormGroup;
   login: String = 'RTX@g.com';
   password: String = 'RTX3060';
