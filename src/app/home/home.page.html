@@ -8,8 +8,8 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <div id="contaioner">
-    <ion-list *ngFor="let c of contacts">
-      <ion-item button="true" (click)="showDetail(c)">
+    <ion-list>
+      <ion-item button="true" (click)="showDetail(c)" *ngFor="let c of contacts">
         <ion-label>
           {{c?.name?.display}}
           <p>{{join(c?.phones)}}</p>

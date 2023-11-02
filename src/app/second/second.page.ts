@@ -9,11 +9,15 @@ import { NavController } from '@ionic/angular';
 })
 export class SecondPage implements OnInit {
 
-  data: any;
   str: any;
+  y: any;
+  phones: any;
+  email: any;
   constructor(private route: ActivatedRoute, private nav: NavController) {
-    this.data = this.route.snapshot.params['data'];
-    this.str = JSON.parse(this.data);
+    this.str = JSON.parse(this.route.snapshot.params['data']);
+    this.phones = this.str['phones'];
+    this.y = this.str['name'];
+    this.email = this.str['emails'];
   }
 
   ngOnInit() {

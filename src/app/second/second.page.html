@@ -15,7 +15,41 @@
       <ion-title size="large">Full information</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-label>
-    {{ data }}
-  </ion-label>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Name: {{ y.given }}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Surname: {{ y.family }}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Phones:
+      </ion-label>
+    </ion-item>
+    <ion-item *ngFor="let p of phones">
+      <ion-label class="ion-padding-horizontal">
+        {{ p.type }}: {{ p.number }}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Emails:
+      </ion-label>
+    </ion-item>
+    <ion-item *ngFor="let e of email">
+      <ion-label class="ion-padding-horizontal">
+        {{ e.type }}: {{ e.address }}
+      </ion-label>
+    </ion-item>
+    <ion-item *ngIf="email == null">
+      <ion-label class="ion-padding-horizontal">
+        <p>No email</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
